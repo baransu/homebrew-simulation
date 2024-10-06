@@ -1,7 +1,7 @@
 class Ogre23 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
+  url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
   revision 2
@@ -92,7 +92,7 @@ class Ogre23 < Formula
     inreplace (lib/"pkgconfig/OGRE-2.3-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
     # Move versioned libraries (*.2.2.6.dylib) to standard location and remove symlinks
-    lib.install Dir[lib/"OGRE-2.3/lib*.2.3.1.dylib"]
+    lib.install Dir[lib/"OGRE-2.3/lib*.2.3.3.dylib"]
     rm Dir[lib/"OGRE-2.3/lib*"]
 
     # Move plugins to subfolder
@@ -100,7 +100,7 @@ class Ogre23 < Formula
 
     # Restore lib symlinks
     Dir[lib/"lib*"].each do |l|
-      (lib/"OGRE-2.3").install_symlink l => File.basename(l.sub(".2.3.1", ""))
+      (lib/"OGRE-2.3").install_symlink l => File.basename(l.sub(".2.3.3", ""))
     end
   end
 

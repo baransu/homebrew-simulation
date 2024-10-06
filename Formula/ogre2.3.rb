@@ -39,7 +39,7 @@ class Ogre23 < Formula
       "-DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON",
       "-DCMAKE_CXX_EXTENSIONS:BOOL=ON",
       "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
-      "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=FALSE",
+      "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=TRUE",
       "-DOGRE_BUILD_RENDERSYSTEM_METAL:BOOL=TRUE",
       "-DOGRE_BUILD_COMPONENT_HLMS:BOOL=TRUE",
       "-DOGRE_BUILD_COMPONENT_HLMS_PBS:BOOL=ON",
@@ -55,7 +55,7 @@ class Ogre23 < Formula
       "-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=FALSE",
     ]
     # use the following to disable GL3Plus render engine which won't work when OpenGL is removed
-    # cmake_args << "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF" if MacOS::Xcode.version >= "10"
+    cmake_args << "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF" if MacOS::Xcode.version >= "10"
     cmake_args.concat std_cmake_args
 
     mkdir "build" do

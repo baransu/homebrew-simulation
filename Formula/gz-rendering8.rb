@@ -24,7 +24,7 @@ class GzRendering8 < Formula
   depends_on "gz-plugin2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
-  depends_on "ogre2.1"
+  depends_on "ogre2.3"
 
   def install
     rpaths = [

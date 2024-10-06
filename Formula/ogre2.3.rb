@@ -35,7 +35,7 @@ class Ogre23 < Formula
       rpath(source: lib/"OGRE-2.3/OGRE", target: lib),
     ]
     cmake_args = [
-      "-DCMAKE_CXX_STANDARD=14",
+      "-DCMAKE_CXX_STANDARD=17",
       "-DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON",
       "-DCMAKE_CXX_EXTENSIONS:BOOL=ON",
       "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
